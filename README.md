@@ -1,6 +1,8 @@
 # collaborationSfM：众包式结构光恢复系统（Structure-from-Motion）
 
-一个基于 COLMAP 的后端系统，支持多个用户协同上传图像数据，并异步触发同一区域的三维重建任务。
+一个基于 COLMAP 的后端系统，支持多个用户协同上传图像数据，并异步触发同一区域的三维重建任务。(由于擅长于地层算法，对后端这些不是擅长，要实现collaboration ，更多是业务代码，和算法没有太多关系。
+colmap 框架数据存储是基于sqlite3,as we all know,sqite是本地数据库，无法实现并发，多人写入的时候会上锁，在不改变数据库的情况下，采用fastapi +celery实现
+collaboration ，目前只考虑后端，前端后面再说)   
 
 ## ✨ 功能亮点
 
